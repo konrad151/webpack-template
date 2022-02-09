@@ -1,2 +1,3 @@
-import {changeBackground} from './changeBackground';
+import { changeBackground } from './changeBackground';
+
 changeBackground();

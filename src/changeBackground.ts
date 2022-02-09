@@ -1,3 +1,3 @@
-export const changeBackground = function() {
-	document.querySelector('html')!.style.background = 'red';
+export default function () {
+  document.querySelector('html')!.style.background = 'black';
 }

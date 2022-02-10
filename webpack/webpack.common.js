@@ -1,5 +1,5 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // eslint-disable-line import/no-extraneous-dependencies
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.ts'),
@@ -41,4 +41,4 @@ module.exports = {
     }),
   ],
   stats: 'errors-only',
-}
+};

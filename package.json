@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
-    "eslint-src": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "lint": "eslint --fix \"src/**/*.{js,jsx,ts,tsx,json}\""
   },
   "repository": {
     "type": "git",
@@ -29,8 +30,13 @@
     "css-loader": "^6.6.0",
     "eslint": "7.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.3",
+    "prettier": "^2.5.1",
     "style-loader": "^3.3.1",
     "typescript": "^4.5.5",
     "webpack": "^5.68.0",
@@ -40,5 +46,18 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.17.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

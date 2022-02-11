@@ -1,7 +1,7 @@
-import changeBackground from './changeBackground';
-import image from './image.png';
+import dummyFunction from './dummyFunction';
 
-changeBackground();
-document.querySelector('#root')!.innerHTML = `
-  <img src="${image}">
-`;
+const root = document.querySelector('.dummy-function');
+
+if (root) {
+  root.innerHTML = dummyFunction();
+}

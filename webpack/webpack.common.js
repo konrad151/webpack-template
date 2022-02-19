@@ -47,7 +47,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '..', './build'),
-    filename: '[name].[contenthash].js',
+    filename: '[name].js',
     clean: true,
   },
   plugins: [
@@ -55,7 +55,7 @@ module.exports = {
       template: path.resolve(__dirname, '..', './src/index.html'),
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: '[name].css',
     }),
   ],
   stats: 'errors-only',

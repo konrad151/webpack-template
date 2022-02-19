@@ -1,4 +1,4 @@
-import dummyFunction from './dummyFunction';
+import dummyFunction from './helpers/dummyFunction';
 import './index.css';
 import './index.scss';
 
